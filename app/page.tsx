@@ -34,13 +34,25 @@ export default function Home() {
             >
               &nbsp;
             </motion.div>
-            <div className="pointer-events-none fixed inset-0 flex items-center justify-center ">
+            <div className="pointer-events-none fixed inset-0 flex items-end justify-center sm:items-center  ">
               <motion.div
-                initial={{ opacity: 0, y: "-100%", scale: 0.8 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, y: "-100%", scale: 0.8 }}
+                initial={{
+                  opacity: "var(--opacity-from,1)",
+                  y: "var(--y-from,0)",
+                  scale: "var(--scale-from,1)",
+                }}
+                animate={{
+                  opacity: "var(--opacity-to,1)",
+                  y: "var(--y-to,0)",
+                  scale: "var(--scale-to,1)",
+                }}
+                exit={{
+                  opacity: "var(--opacity-from,1)",
+                  y: "var(--y-from,0)",
+                  scale: "var(--scale-from,1)",
+                }}
                 onClick={(e) => e.stopPropagation()}
-                className="pointer-events-auto h-96 w-96  bg-white"
+                className="pointer-events-auto  h-96 w-[calc(100%_-_40px)] bg-white [--opacity-from:0%] [--opacity-to:100%] max-sm:[--y-from:100%] max-sm:[--y-to:0px] sm:[--scale-from:85%] sm:[--scale-to:100%]"
               >
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Pariatur, iure.
